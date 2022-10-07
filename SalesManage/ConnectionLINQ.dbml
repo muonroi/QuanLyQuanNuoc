@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QuanLyQuanCaFe" Class="ConnectionLINQDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.;Initial Catalog=QuanLyQuanCaFe;Integrated Security=True" SettingsObjectName="SalesManage.Properties.Settings" SettingsPropertyName="QuanLyQuanCaFeConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.ban" Member="bans">
+    <Type Name="ban">
+      <Column Name="Soban" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Tinhtrang" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Association Name="ban_ct_hd" Member="ct_hds" ThisKey="Soban" OtherKey="soban" Type="ct_hd" />
+      <Association Name="ban_hoadon" Member="hoadons" ThisKey="Soban" OtherKey="soban" Type="hoadon" />
+    </Type>
+  </Table>
+  <Table Name="dbo.users" Member="users">
+    <Type Name="user">
+      <Column Name="Name" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="UserName" Type="System.String" DbType="VarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Password" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="priority" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CATRUC" Member="CATRUCs">
+    <Type Name="CATRUC">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ca" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="ngaytruc" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IDnhanvien" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="nhanvien_CATRUC" Member="nhanvien" ThisKey="IDnhanvien" OtherKey="MANV" Type="nhanvien" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ct_hd" Member="ct_hds">
+    <Type Name="ct_hd">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MaHoaDon" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MaSP" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ngayban" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="soban" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SoLuong" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DonGia" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="ThanhTien" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Association Name="ban_ct_hd" Member="ban" ThisKey="soban" OtherKey="Soban" Type="ban" IsForeignKey="true" />
+      <Association Name="douong_ct_hd" Member="douong" ThisKey="MaSP" OtherKey="ID" Type="douong" IsForeignKey="true" />
+      <Association Name="hoadon_ct_hd" Member="hoadon" ThisKey="MaHoaDon" OtherKey="ID" Type="hoadon" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.douong" Member="douongs">
+    <Type Name="douong">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="tendouong" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="ghichu" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Soluong" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="giatien" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Association Name="douong_ct_hd" Member="ct_hds" ThisKey="ID" OtherKey="MaSP" Type="ct_hd" />
+    </Type>
+  </Table>
+  <Table Name="dbo.hoadon" Member="hoadons">
+    <Type Name="hoadon">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="soban" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="hoadon_ct_hd" Member="ct_hds" ThisKey="ID" OtherKey="MaHoaDon" Type="ct_hd" />
+      <Association Name="ban_hoadon" Member="ban" ThisKey="soban" OtherKey="Soban" Type="ban" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.nhanvien" Member="nhanviens">
+    <Type Name="nhanvien">
+      <Column Name="MANV" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TENHANVIEN" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="GIOITINH" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="DIENTHOAI" Type="System.String" DbType="NVarChar(12)" CanBeNull="true" />
+      <Association Name="nhanvien_CATRUC" Member="CATRUCs" ThisKey="MANV" OtherKey="IDnhanvien" Type="CATRUC" />
+    </Type>
+  </Table>
+  <Table Name="dbo.thongke" Member="thongkes">
+    <Type Name="thongke">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TenSanPham" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="Soluong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ngaylap" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="doanhthu" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

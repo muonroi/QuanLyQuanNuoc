@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 9.25" name="ConnectionLINQ">
+  <DataContextMoniker Name="/ConnectionLINQDataContext" />
+  <nestedChildShapes>
+    <classShape Id="1d8c85a9-319c-48c0-84cd-0d353ee58059" absoluteBounds="0.75, 4, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/ConnectionLINQDataContext/ban" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e550de72-821e-4b61-9445-bb65ae9e4f4d" absoluteBounds="0.765, 4.46, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0347d7c9-a7ef-462c-a88e-2f8f373c854f" absoluteBounds="6.75, 7.25, 2, 1.5785953776041675">
+      <DataClassMoniker Name="/ConnectionLINQDataContext/user" />
+      <nestedChildShapes>
+        <elementListCompartment Id="117d8f99-04d6-415e-a25a-386c68a1d579" absoluteBounds="6.765, 7.71, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="60a379ed-b996-4ad7-9fca-5967987250d0" absoluteBounds="3.5, 7.375, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/ConnectionLINQDataContext/CATRUC" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5bcb5166-d46c-4697-bb0e-18b40e3ecbd1" absoluteBounds="3.515, 7.835, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8de392eb-9a97-4493-b3d8-c2e72857ffaf" absoluteBounds="6.25, 3.5, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/ConnectionLINQDataContext/ct_hd" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0f4a4fbf-d0bf-4384-9553-0e50be2b03d1" absoluteBounds="6.265, 3.96, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8c575a68-e013-4b0c-b6ff-dbaeb8b7b487" absoluteBounds="3.5, 0.75, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/ConnectionLINQDataContext/douong" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c614c5e0-1ca7-486c-82c0-999018b73bbe" absoluteBounds="3.515, 1.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a8beefbc-759d-4934-a853-8c623161f782" absoluteBounds="3.5, 4, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/ConnectionLINQDataContext/hoadon" />
+      <nestedChildShapes>
+        <elementListCompartment Id="af6dd215-b0d7-4683-8629-501c54c7bac5" absoluteBounds="3.515, 4.46, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="25953b27-be1d-4302-8203-f9b49f0227c8" absoluteBounds="0.75, 7.375, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/ConnectionLINQDataContext/nhanvien" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fbe29feb-b665-4534-9afd-0bd74b14281a" absoluteBounds="0.765, 7.835, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7645428f-40bf-4c5e-95df-ea1a621e2265" absoluteBounds="8.75, 2.25, 2, 1.7708968098958326">
+      <DataClassMoniker Name="/ConnectionLINQDataContext/thongke" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0d621366-47de-4ea7-ab0f-f244529161bc" absoluteBounds="8.765, 2.71, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(1.75 : 5.19399251302083); (1.75 : 5.52089730989583); (6.25 : 5.52089730989583)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/ConnectionLINQDataContext/ban/ban_ct_hd" />
+      <nodes>
+        <classShapeMoniker Id="1d8c85a9-319c-48c0-84cd-0d353ee58059" />
+        <classShapeMoniker Id="8de392eb-9a97-4493-b3d8-c2e72857ffaf" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 1.63544840494792); (7.25 : 1.63544840494792); (7.25 : 3.5)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/ConnectionLINQDataContext/douong/douong_ct_hd" />
+      <nodes>
+        <classShapeMoniker Id="8c575a68-e013-4b0c-b6ff-dbaeb8b7b487" />
+        <classShapeMoniker Id="8de392eb-9a97-4493-b3d8-c2e72857ffaf" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 4.59699625651042); (6.25 : 4.59699625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/ConnectionLINQDataContext/hoadon/hoadon_ct_hd" />
+      <nodes>
+        <classShapeMoniker Id="a8beefbc-759d-4934-a853-8c623161f782" />
+        <classShapeMoniker Id="8de392eb-9a97-4493-b3d8-c2e72857ffaf" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 4.59699625651042); (3.5 : 4.59699625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/ConnectionLINQDataContext/ban/ban_hoadon" />
+      <nodes>
+        <classShapeMoniker Id="1d8c85a9-319c-48c0-84cd-0d353ee58059" />
+        <classShapeMoniker Id="a8beefbc-759d-4934-a853-8c623161f782" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 8.16429768880208); (3.5 : 8.16429768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/ConnectionLINQDataContext/nhanvien/nhanvien_CATRUC" />
+      <nodes>
+        <classShapeMoniker Id="25953b27-be1d-4302-8203-f9b49f0227c8" />
+        <classShapeMoniker Id="60a379ed-b996-4ad7-9fca-5967987250d0" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
